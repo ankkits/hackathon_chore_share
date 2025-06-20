@@ -16,11 +16,12 @@ fig = px.bar(df, x="Chore", y=["Average Time (Women, hrs)", "Average Time (Men, 
 
 # Streamlit app
 st.title("🧹 Chore-Share")
-st.markdown("### Let’s make chores fun, fair, and gender-balanced!")
+
+st.markdown(f"#### 🕒 Total Daily Chore Time(based on survey data): \n -The avg time spent by each gender:\n- **Women:** {total_women:.2f} hrs\n- **Men:** {total_men:.2f} hrs\n- **Extra Load on Women:** {total_women - total_men:.2f} hrs")
 
 st.plotly_chart(fig)
 
-st.markdown(f"#### 🕒 Total Daily Chore Time:\n- **Women:** {total_women:.2f} hrs\n- **Men:** {total_men:.2f} hrs\n- **Extra Load on Women:** {total_women - total_men:.2f} hrs")
+st.markdown("### Let’s make chores fun, fair, and gender-balanced!")
 
 st.subheader("🧮 Your Fair Chore Plan")
 p1 = st.text_input("Partner 1 Name", "Alice")
